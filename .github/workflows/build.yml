@@ -31,7 +31,7 @@ jobs:
       - name: swift version
         uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
         with:
-          swift-version: "5.7"
+          swift-version: "5.7.0"
       - name: do it
         run: |
           brew install make xz ldid
