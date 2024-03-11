@@ -28,8 +28,13 @@ jobs:
           sparse-checkout: iPhoneOS14.5.sdk
           path: theos/sdks
 
-      - name: Setup libGc & build package
+      - name: swift version
+        uses: swift-actions/setup-swift@65540b95f51493d65f5e59e97dcef9629ddf11bf
+        with:
+          swift-version: "5.7.2"
+      - name: do it
         run: |
+          brew install make xz ldid
           THEOS=theos make package
 
       - name: Upload a Build Artifact
