@@ -30,7 +30,7 @@ jobs:
 
       - name: Setup libGc & build package
         run: |
-          make package
+          THEOS=theos gmake package
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
