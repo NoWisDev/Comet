@@ -35,9 +35,10 @@ jobs:
       - name: do it
         run: |
           brew install make xz ldid
-          THEOS=theos make package
+          #THEOS=theos make package
+          THEOS=theos make clean package TARGET="iphone:clang:14.5:14.0" FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         with:
-          path: packages/*.framework
+          path: packages/*.deb
